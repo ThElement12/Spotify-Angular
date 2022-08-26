@@ -1,1 +1,24 @@
-<p>side-bar works!</p>
+<div class="side-bar">
+    <div><i class="uil uil-ellipsis-h"></i></div>
+    <ul class="side-bar__list list-one">
+        <li *ngFor="let item of mainMenu.defaultOptions">
+            <div class="list-wrapper-item">
+                <i  [ngClass]="[item.icon]"></i>
+                <span class="side-bar__list list-label">{{item.name}}</span>
+            </div>
+        </li>
+    </ul>
+    <div class="side-bar__separator"></div>
+    <ul class="side-bar__list list-two">
+        <li *ngFor="let item of mainMenu.accessLink">
+            <div class="list-wrapper-item">
+                <i  [ngClass]="[item.icon]"></i>
+                <span class="side-bar__list list-label">{{item.name}}</span>
+            </div>
+        </li>
+    </ul>
+    <div class="side-bar__separator line-separator"></div>
+    <ul class="side-bar__list list-three">
+      
+    </ul>
+</div>

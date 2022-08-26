@@ -1,1 +1,66 @@
-<p>media-player works!</p>
+<div class="media-player">
+    <div class="media-player--wrapper">
+        <div class="artist player-center">
+            <ng-container *ngTemplateOutlet="artist"></ng-container>
+        </div>
+        <div class="player-controls player-center">
+            <ng-container *ngTemplateOutlet="player"></ng-container>
+        </div>
+        <div class="player-audio player-center">
+            <ng-container *ngTemplateOutlet="audio"></ng-container>
+        </div>
+    </div>
+</div>
+
+<!--Template Zone-->
+
+<ng-template #artist>
+    <div class="artist-inside" *ngIf="true">
+        <img [src]="mockCover.cover" alt="" class="cover">
+        <div class="track-info">
+            <h3 class="track-title">{{mockCover.name}}</h3>
+            <h5 class="track-title sub-title">{{mockCover.album}}</h5>
+        </div>
+        <div class="track-like">
+            <button class="btn-like">
+                <i class="uil uil-heart"></i>
+            </button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #player>
+    <div class="player-controls-inside">
+        <div class="buttons-media">
+            <button class="arrow btn">
+                <i class="uil uil-step-backward"></i>
+            </button>
+            <button class="play btn">
+                <i class="uil uil-play"></i>
+            </button>
+            <button class="arrow btn">
+                <i class="uil uil-skip-forward"></i>
+            </button>
+        </div>
+        <div class="media-linetime">
+            <div class="time">00</div>
+            <span #progressBar class="time-progress">
+                <span class="time-progress-live" [style.width]="10+'%'"></span>
+            </span>
+            <div class="time">99</div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #audio>
+    <div class="player-audio-inside">
+        <button class="btn-media">
+            <i class="uil uil-list-ui-alt"></i>
+        </button >
+        <button class="btn-media">
+            <i class="uil uil-boombox"></i>
+        </button>
+        <button class="btn-media">
+            <i class="uil uil-volume-off"></i>
+        </button>
+    </div>
+</ng-template>

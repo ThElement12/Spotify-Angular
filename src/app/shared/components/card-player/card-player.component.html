@@ -1,8 +1,8 @@
 <!-- Diseño del mode (small)-->
 <div *ngIf="mode==='small'" class="card-player player-small">
-    <img [src]="track?.cover" [alt]="track?.name" class="cover">
+    <img [src]="track.cover" [alt]="track.name" class="cover">
     <div class="content-player">
-        {{track?.name}}
+        {{track.name}}
     </div>
     <div class="buttons-player">
         <button *ngIf="true" class="play-btn">
